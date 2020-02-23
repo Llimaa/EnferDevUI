@@ -1,0 +1,26 @@
+.card-principal {
+  margin-top: 100px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+dd {
+  padding: 8px;
+  font-size: 20px;
+}
+
+button {
+  /* background-color: cornflowerblue; */
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.enfermeiros {
+  background-color: #17a2b8;
+}
+.ativar {
+  background-color: #28a745;
+}
+.editar {
+  background-color: #007bff;
+}

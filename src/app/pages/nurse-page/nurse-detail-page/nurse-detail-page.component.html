@@ -1,0 +1,76 @@
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m card-principal">
+
+  <table class="uk-table">
+    <tbody>
+      <tr>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Nome:</b></dt>
+            <dd>{{nurse.name}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>cpf:</b></dt>
+            <dd>{{nurse.cpf}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Data de nascimento:</b></dt>
+            <dd>{{nurse.dateBirth | date}}</dd>
+          </dl>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Coren:</b></dt>
+            <dd>{{nurse.coren}}</dd>
+          </dl>
+        </td>
+
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Hospital:</b></dt>
+            <dd>{{nurse.nameHospital}}</dd>
+          </dl>
+        </td>
+
+
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Ativo:</b></dt>
+            <dd>{{nurse.activeString}}</dd>
+          </dl>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="td-space">
+        </td>
+
+        <td class="td-space">
+          <button class=" uk-button uk-button-secundary
+            uk-animation-slide-bottom-small editar" (click)="openModel(nurse)" type="button">Editar</button>
+        </td>
+        <td class="td-space">
+          <button [hidden]="nurse.active" class=" uk-button uk-button-success
+            uk-animation-slide-bottom-small ativar" (click)="activeNurse()" type="button">Ativar</button>
+
+          <button [hidden]="!nurse.active" class=" uk-button uk-button-danger
+            uk-animation-slide-bottom-small" (click)="desactiveNurse()" type="button">Desativar</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+<div id="modal" #myModal uk-modal style="background-color: #f8f8f8;" class="modal fade">
+  <div class="uk-modal-dialog uk-modal-body">
+    <app-nurse-forms-component (result)="resultForms($event)">
+    </app-nurse-forms-component>
+  </div>
+</div>

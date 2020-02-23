@@ -1,0 +1,41 @@
+<br><br>
+<div class="uk-card uk-card-body">
+  <tr class="tr-fixo uk-background-muted">
+    <td>
+      <button class="uk-button uk-button-default" type="button" (click)="openModel()">Novo</button>
+    </td>
+  </tr>
+  <table style="margin-top: 100px;" class="uk-table uk-table-middle uk-table-divider">
+    <tbody *ngFor="let hospital of hospitais; ">
+      <tr class="uk-card-default uk-card-body uk-background-muted">
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Cnpj:</b></dt>
+            <dd>{{hospital.cnpj | cnpj}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Nome:</b></dt>
+            <dd>{{hospital.name}}</dd>
+          </dl>
+        </td>
+        <td>
+          <button (click)="detalhar(hospital)" class="uk-button uk-button-secundary
+          uk-animation-slide-bottom-small detail" type="button">Detalhes</button>
+        </td>
+        <td><button (click)="openModel(hospital)" class=" uk-button uk-button-secundary
+            uk-animation-slide-bottom-small" type="button">Editar</button></td>
+      </tr>
+      <br>
+    </tbody>
+  </table>
+</div>
+
+<div id="modal" #myModal uk-modal style="background-color: #f8f8f8;" class="modal fade">
+  <div class="uk-modal-dialog uk-modal-body">
+
+    <app-hospital-forms-component (result)="resultForms($event)">
+    </app-hospital-forms-component>
+  </div>
+</div>

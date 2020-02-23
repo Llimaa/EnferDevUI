@@ -1,0 +1,17 @@
+form input {
+  border-radius: 25px;
+  height: 49px;
+}
+
+button {
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+}
+
+#save {
+  background-color: #007bff;
+}

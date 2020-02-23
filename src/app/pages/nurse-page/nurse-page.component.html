@@ -1,0 +1,40 @@
+<br><br>
+<div class="uk-card uk-card-body">
+  <tr class="tr-fixo uk-background-muted">
+    <td>
+      <button class="uk-button uk-button-default" type="button" (click)="openModel()">Novo</button>
+    </td>
+  </tr>
+  <table style="margin-top: 100px;" class="uk-table uk-table-middle uk-table-divider">
+    <tbody *ngFor="let nurse of nurses; ">
+      <tr class="uk-card-default uk-card-body uk-background-muted">
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Coren:</b></dt>
+            <dd>{{nurse.coren}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Nome:</b></dt>
+            <dd>{{nurse.name}}</dd>
+          </dl>
+        </td>
+        <td>
+          <button (click)="detalhar(nurse)" class="uk-button uk-button-secundary
+          uk-animation-slide-bottom-small detail" type="button">Detalhes</button>
+        </td>
+        <td><button (click)="openModel(nurse)" class=" uk-button uk-button-secundary
+            uk-animation-slide-bottom-small" type="button">Editar</button></td>
+      </tr>
+      <br>
+    </tbody>
+  </table>
+</div>
+
+<div id="modal" #myModal uk-modal style="background-color: #f8f8f8;" class="modal fade">
+  <div class="uk-modal-dialog uk-modal-body">
+    <app-nurse-forms-component (result)="resultForms($event)">
+    </app-nurse-forms-component>
+  </div>
+</div>

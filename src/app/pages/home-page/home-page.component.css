@@ -1,0 +1,32 @@
+.tr-fixo {
+  position: fixed;
+  width: 100%;
+}
+
+table {
+  margin-top: 20px;
+}
+
+.td-space {
+  width: 300px !important;
+}
+
+.modal {
+  /* background-color: ##3CB371; */
+  border-radius: 12px;
+}
+
+dd {
+  padding: 8px;
+  font-size: 18px;
+}
+
+button {
+  background-color: #007bff;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.detail {
+  background-color: #17a2b8;
+}

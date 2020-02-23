@@ -1,0 +1,100 @@
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m card-principal">
+
+  <table class="uk-table">
+    <tbody>
+      <tr>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Nome:</b></dt>
+            <dd>{{hospital.name}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Cnpj:</b></dt>
+            <dd>{{hospital.cnpj | cnpj}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Pais:</b></dt>
+            <dd>{{hospital.country}}</dd>
+          </dl>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Estado:</b></dt>
+            <dd>{{hospital.state}}</dd>
+          </dl>
+        </td>
+
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Cidade:</b></dt>
+            <dd>{{hospital.city}}</dd>
+          </dl>
+        </td>
+
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Rua:</b></dt>
+            <dd>{{hospital.street}}</dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Número:</b></dt>
+            <dd>{{hospital.number}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Cep:</b></dt>
+            <dd>{{hospital.zipCode}}</dd>
+          </dl>
+        </td>
+        <td class="td-space">
+          <dl class="uk-description-list">
+            <dt><b>Ativo:</b></dt>
+            <dd>{{hospital.activeString}}</dd>
+          </dl>
+        </td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="td-space">
+          <button class=" uk-button uk-button-secundary
+            uk-animation-slide-bottom-small enfermeiros" (click)="enfermeiros(hospital)"
+            type="button">Enfermeiros</button>
+        </td>
+        <td class="td-space">
+          <button class=" uk-button uk-button-secundary
+            uk-animation-slide-bottom-small editar" (click)="openModel(hospital)" type="button">Editar</button>
+        </td>
+        <td class="td-space">
+          <button [hidden]="hospital.active" class=" uk-button uk-button-success
+            uk-animation-slide-bottom-small ativar" (click)="ativarHospital()" type="button">Ativar</button>
+
+          <button [hidden]="!hospital.active" class=" uk-button uk-button-danger
+            uk-animation-slide-bottom-small" (click)="desativarHospital()" type="button">Desativar</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+<div id="modal" #myModal uk-modal style="background-color: #f8f8f8;" class="modal fade">
+  <div class="uk-modal-dialog uk-modal-body">
+
+    <app-hospital-forms-component (result)="resultForms($event)">
+    </app-hospital-forms-component>
+  </div>
+</div>

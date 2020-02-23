@@ -1,0 +1,23 @@
+.tr-fixo {
+  position: fixed;
+  width: 100%;
+}
+
+table {
+  margin-top: 20px;
+}
+
+dd {
+  padding: 8px;
+  font-size: 18px;
+}
+
+button {
+  background-color: #007bff;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.detail {
+  background-color: #17a2b8;
+}

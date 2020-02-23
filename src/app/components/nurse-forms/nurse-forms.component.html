@@ -1,0 +1,31 @@
+<h2 class="uk-modal-title">Formulário do hospital </h2>
+<form [formGroup]="form" class="uk-grid-small" uk-grid>
+  <div [hidden]="true" class="uk-width-1-1">
+    <input class="uk-input" formControlName="id" type="text" placeholder="Id">
+  </div>
+  <div [hidden]="true" class="uk-width-1-1">
+    <input class="uk-input" formControlName="nameHospital" type="text" placeholder="">
+  </div>
+  <div [hidden]="true" class="uk-width-1-1">
+    <input class="uk-input" formControlName="hospitalId" type="text" placeholder="">
+  </div>
+  <div class="uk-width-1-1">
+    <input class="uk-input" formControlName="name" type="text" placeholder="Nome">
+  </div>
+  <div class="uk-width-1-1">
+    <input class="uk-input" formControlName="cpf" type="num" placeholder="CPF">
+    <!--mask="999.999.999.99"-->
+  </div>
+  <div class="uk-width-1-2@s">
+    <input class="uk-input" formControlName="coren" type="text" placeholder="Coren">
+  </div>
+  <div class="uk-width-1-2@s">
+    <input class="uk-input" formControlName="dateBirth" type="date" placeholder="Data de nascimento">
+  </div>
+</form>
+<p class="uk-text-right">
+  <button class="uk-button uk-button-danger uk-modal-close" (click)="limparDados()"
+    type="button">Cancelar</button>&nbsp;&nbsp;
+  <button id="save" class="uk-button uk-button-danger uk-modal-close" [hidden]="form.invalid" (click)="submit()"
+    type="button">Salvar</button>
+</p>
